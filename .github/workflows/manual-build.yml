@@ -15,18 +15,18 @@ jobs:
 
     steps:
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: build
         uses: ./.github/actions/build
         with:
           version: ${{ inputs.version }}
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: pijul.exe
           path: |
             pijul.exe
             pijul.lock
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: pijul-with-git.exe
           path: |
