@@ -23,8 +23,12 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: pijul.exe
-          path: pijul.exe
+          path: |
+            pijul.exe
+            pijul.lock
       - uses: actions/upload-artifact@v3
         with:
           name: pijul-with-git.exe
-          path: pijul-with-git.exe
+          path: |
+            pijul-with-git.exe
+            pijul-with-git.lock

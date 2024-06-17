@@ -57,3 +57,10 @@ jobs:
           file: piju*.exe
           file_glob: true
           tag: ${{ needs.check.outputs.latest-version }}
+      - name: Upload generated lockfiles
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          file: piju*.lock
+          file_glob: true
+          tag: ${{ needs.check.outputs.latest-version }}
