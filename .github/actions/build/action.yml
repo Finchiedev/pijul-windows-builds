@@ -29,6 +29,7 @@ runs:
     - name: Build pijul
       shell: bash
       run: |
+        rustc -vV
         cargo install pijul --version ${{ inputs.version }} --root .
         cp bin/pijul.exe pijul.exe
     - name: Build pijul-with-git
