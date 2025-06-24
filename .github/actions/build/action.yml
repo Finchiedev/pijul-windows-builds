@@ -11,6 +11,7 @@ runs:
     - name: Set up environment
       shell: bash
       run: |
+        echo "RUSTFLAGS=-Ctarget-feature=+crt-static" | tee -a "$GITHUB_ENV"
         echo "CARGO_TERM_COLOR=always" | tee -a "$GITHUB_ENV"
         echo "VCPKG_DEFAULT_TRIPLET=x64-windows-static-md" | tee -a "$GITHUB_ENV"
         echo "VCPKG_INSTALLED_DIR=${{ github.workspace }}/vcpkg_installed" | tee -a "$GITHUB_ENV"
